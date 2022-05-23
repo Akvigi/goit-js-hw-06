@@ -13,9 +13,34 @@ const images = [
   },
 ];
 const galleryList = document.querySelector(".gallery")
-const imagesLi = images.map(image => {
-  galleryList.insertAdjacentHTML("beforeend", `<li><img src=${image.url} width = 300px 
-  height = 200px class = "itimg" alt=${image.alt}></li>`)
+// const liIm = images.map(image => {
+//   const li = document.createElement("li")
+//   const img = document.createElement("img")
+//   img.style.width = "300px"
+//   img.style.width = "200px"
+//   img.src = image.url
+//   img.alt = image.alt
+//   li.append(img)
+//   return li
+// })
+galleryList.insertAdjacentHTML("beforeend", images.map(image => 
+  `<li><img src=${image.url} width = 300px height = 200px class = "itimg" alt=${image.alt}></li>`
+).join("")
+)
+
+// // const imagesLi = images.map(image => {
+//   galleryList.insertAdjacentHTML("beforeend", `<li><img src=${image.url} width = 300px 
+//   height = 200px class = "itimg" alt=${image.alt}></li>`)
+//  galleryList.insertAdjacentHTML("beforeend", images.map(image => {
+//   const li = document.createElement("li")
+//   const img = document.createElement("img")
+//   img.style.width = "300px"
+//   img.style.width = "200px"
+//   img.src = image.url
+//   img.alt = image.alt
+//   li.append(img)
+//   return li
+// }) )
 
 
   // const li = document.createElement("li")
@@ -29,7 +54,7 @@ const imagesLi = images.map(image => {
   // console.log(li)
   // console.log(img)
   // return li
-}) 
+// }) 
 
   galleryList.style.display = "flex"
   galleryList.style.flexDirection = "row"
